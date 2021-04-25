@@ -1,0 +1,59 @@
+<%- include('../partials/header')%>
+<br><br>
+
+<nav class="nav navbar-default d-flex justify-content-between navbar navbar-light mb-4" style="background-color: #e3f2fd;">
+  <a class="nav-link active" aria-current="page" href="/cohorts/pickerOptions"><h5>Super Team Picker</h5></a> 
+  <div class="d-flex justify-content-end">  
+    <a class="nav-link active" aria-current="page" href="/cohorts/home"><h5>Home</h5></a> 
+    <a class="nav-link active" aria-current="page" href="/cohorts"><h5>Cohorts</h5></a> 
+    <a class="nav-link active" aria-current="page" href="/cohorts/new"><h5>New Cohort</h5></a> 
+  </div>
+</nav>
+
+<%# logo url%>
+<div class= 'card'>
+<div class='ml-4 mr-4 mb-4 mt-4'>
+<form action="/cohorts" method="POST">
+    <div class='form-group'>
+      <label for="logo">Logo Url</label>
+      <input
+        type='url'
+        class='form-control'
+        name='logoUrl'
+        placeholder='e.g. http://www.example.com/some.jpg'     
+      >
+    </div>
+    <br>
+<%#Name of the team%>
+    <div class='form-group'>
+      <label for="name">Name</label>
+      <input
+        type='text'
+        class='form-control'
+        name='name'
+        placeholder='Flying Funks'   
+      >
+    </div>
+    <br>
+<%# members of the team%>
+    <div class='form-group'>
+      <label for="members">Members</label>
+      <textarea
+        class='form-control'
+        name='members'
+        cols='60'
+        rows='5'
+        placeholder="Jon Snow, Daenery, Melisandre,Arya Stark"></textarea>
+    </div>
+
+    <br>
+    <div class="form-group">
+
+      <button type='submit' class='btn btn-outline-primary float-right'><h5>Submit</h5></button>
+    </div>
+  </form> 
+
+
+<%- include('../partials/footer')%>
+</div>
+</div>

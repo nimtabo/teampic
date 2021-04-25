@@ -1,0 +1,51 @@
+<%-include('../partials/header')%>
+
+<nav class="nav navbar-default d-flex justify-content-between navbar navbar-light mb-4 mt-4" style="background-color: #e3f2fd;">
+  <a class="nav-link active" aria-current="page" href="/cohorts/pickerOptions"><h5>Super Team Picker</h5></a> 
+  <div class="d-flex justify-content-end">  
+    <a class="nav-link active" aria-current="page" href="/cohorts/home"><h5>Home</h5></a> 
+    <a class="nav-link active" aria-current="page" href="/cohorts"><h5>Cohorts</h5></a> 
+    <a class="nav-link active" aria-current="page" href="/cohorts/new"><h5>New Cohort</h5></a> 
+  </div>
+</nav>
+
+<%cohort.forEach((cohorts)=>{%>
+  <div class="card">
+    <div class="card-body">
+
+  <%if(cohorts){%>
+    <% if (cohorts.logoUrl) { %> 
+
+      <div class="col-md-12" >
+        <div class="form-inline">
+        <div class="pull-left">
+          <img class='rounded-circle'src='<%= cohorts.logoUrl %>'alt='post image'>
+        </div>
+        <% } %>
+        <div>
+          <h2 class='card-title'><%= cohorts.name %></h2>
+        </div>
+      </div>
+
+        <div class="pull-left">
+           <p class='card-text'><%= cohorts.members %></p>
+        </div>
+     </div>
+    </div>
+
+      <div>
+        <a href="/cohorts/<%=cohorts.id%>"><button type="submit" class="btn btn-primary mb-4 ml-4">Show Cohort</button> </a>
+      </div> 
+  </div>
+</div>
+
+
+<br><br><br>
+
+
+<%}%>
+<%})%>
+
+
+
+<%-include('../partials/footer')%>
