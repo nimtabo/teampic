@@ -26,9 +26,9 @@ module.exports = {
       rejectUnauthorized: false
     },
     migrations: {
-      directory: __dirname + './db/migrations',
+      directory: __dirname + '/db/migrations',
     },
-    seeds: { directory: __dirname + './db/seeds' },
+    seeds: { directory: __dirname + '/db/seeds' },
 
   }
 
